@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1rzsG4-YxcCeFLBE8ylre7YBouj78dB_w
 """
 
-pip install fastapi
+
 
 # main.py
 from fastapi import FastAPI
