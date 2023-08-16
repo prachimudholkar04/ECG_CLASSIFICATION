@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECG Classifier</title>
+</head>
+<body>
+    <h2>Upload ECG Graph</h2>
+    <input type="file" id="ecgFile">
+    <button onclick="classifyECG()">Classify</button>
+    <h3>Result: <span id="result"></span></h3>
+
+    <script>
+        async function classifyECG() {
+            let fileInput = document.getElementById("ecgFile");
+            let formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            let response = await fetch("http://localhost:8000/classify_ecg/", {
+                method: "POST",
+                body: formData
+            });
+
+            let data = await response.json();
+            document.getElementById("result").textContent = data.heartbeat_type;
+        }
+    </script>
+</body>
+</html>
