@@ -22,4 +22,4 @@ if ECG_data is not None:
         reshape_ecg_data = data.reshape(1, data.shape[1], 1)
         model = load_model('baseline_1Dcnn_mitbih.h5')
         prediction = np.argmax(model.predict(reshape_ecg_data))
-        st.write(f"ECG Prediction: {prediction}")
+        st.write(f"ECG Prediction: {label_2_name[prediction]}")
