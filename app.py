@@ -1,11 +1,11 @@
-import streamlit as st
+ import streamlit as st
 from PIL import Image
 import numpy as np
 import pandas as pd
 from keras.models import load_model
 
-st.title("Project - Prediction of Probability of Default")
-st.subheader("Classification Model for Loan Default Risk Prediction")
+st.title("Project - CLOUD-DRIVEN ECG CLASSIFICATION FOR ARRHYTHMIA")
+st.subheader("Classification Model for ECG classification Prediction")
 image = Image.open("ecg.jpg.webp")
 st.image(image, use_column_width=True)
 
